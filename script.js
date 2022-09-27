@@ -1,122 +1,92 @@
-let form = document.getElementById('form');
-let textInput = document.getElementById('textInput');
-let dateInput = document.getElementById('dateInput');
-let textarea = document.getElementById('textarea');
-let msg = document.getElementById('msg');
-let add = document.getElementById('add');
-let tasks = document.getElementById('tasks');
+console.log("welcome to music hub");
+let songIndex = 0;
+let audioElement = new Audio('music\EV - Hamdard.mp3');
+let masterPlay = document.getElementById('masterPlay');
+let myProgressBar = document.getElementById('myProgressBar');
+let songItems = Array.from(document.getElementsByClassName('songItem'));
 
-let data = [];
+const bar = document.getElementById('bar');
+const close = document.getElementById('close');
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  formValidation();
-});
+const nav = document.getElementById('navbar');
 
-// get the data and show on screen
-let showTasks = () => {
-  tasks.innerHTML = '';
-  data.map((item, index) => {
-    return (tasks.innerHTML += `
-      <div id=${index}>
-      <span class="fw-bold">${item.text}</span>
-      <span class="small text-secondary">${item.date}</span>
-      <p>${item.description}</p>
+if(bar){
+    bar.addEventListener('click',()=>{
+        nav.classList.add('active');
+    })
+}
+if(close){
+    close.addEventListener('click',()=>{
+        nav.classList.remove('active');
+    })
+}
 
-      <span class="options">
-        <!-- edit -->
-        <i
-          class="bi bi-pencil-square"
-          onclick="editTask(this)"
-          data-bs-toggle="modal"
-          data-bs-target="#form"
-        ></i>
 
-        <!-- delete -->
-        <i class="bi bi-trash" onclick="deleteTask(this)"></i>
-      </span>
-    </div>
-      
-      `);
-  });
 
-  resetForm();
-};
 
-let resetForm = () => {
-  textInput.value = '';
-  dateInput.value = '';
-  textarea.value = '';
-};
 
-// posting the data
-let acceptData = () => {
-  data.push({
-    text: textInput.value,
-    date: dateInput.value,
-    description: textarea.value,
-  });
+var button = document.getElementById("button");
+var audio = document.getElementById("player");
 
-  localStorage.setItem('tasks', JSON.stringify(data));
-  showTasks();
+let songs = [
+    { songName: "salam-e-Ishq", filePath: " Baby(PagalWorld).mp3", coverPath: "https://c.saavncdn.com/898/Let-Me-Love-You-English-2016-500x500.jpg" },
+    { songName: "let me love you", filePath: "\EV - Hamdard.mp3 ", coverPath: "https://www.pagalworld.us/_big/ek-villain-2014-250.jpg" },
+    { songName: "bhula dena", filePath: "music\media.mp3.mp3 ", coverPath: "https://www.pagalworld.us/_big/aashiqui-2-2013-250.jpg" },
+    { songName: "humdard", filePath: "music\media.mp3.mp3", coverPath: "https://www.pagalworld.us/_big/ek-villain-2014-250.jpg" },
+    { songName: "salam-e-Ishq", filePath: "music\Never Say Never - Justin Bieber- [PagalWorld.NL].mp3 ", coverPath: "https://pagalworld.nl/siteuploads/thumb/sft25/12373_resize2x_220x220.webp" },
+    { songName: "salam-e-Ishq", filePath: "music\TS - Main Woh Chaand.mp3 ", coverPath: "https://www.pagalworld.us/_big/teraa-surroor-2016-250.jpg" },
+    { songName: "salam-e-Ishq", filePath: "music\Tum Hi Aana(PagalWorld.com.se).mp3", coverPath: "https://www.pagalworld.pw/GpE34Kg9Gq/113434/143221-tum-hi-aana-marjaavaan-mp3-song-300.jpg" },
+    { songName: "salam-e-Ishq", filePath: "music\Tum-Mere-Ho(PagalWorld).mp3 ", coverPath: "https://pagaliworld.com/siteuploads/thumb/sft4/1517_4.jpg" },
+]
+songItems.forEach((element, i) => {
 
-  console.log(data);
-};
+    element.getElementsByTagName('img')[0].src = songs[i].coverPath;
+    element.getElementsByClassName('songName')[0].innerText = songs[i].songName;
 
-let formValidation = () => {
-  if (textInput.value === '') {
-    // failure
-    msg.innerHTML = '* task title cannot be blank';
-  } else {
-    // success
-    msg.innerHTML = '';
-    acceptData();
+})
 
-    // close the modal after submission
-    add.setAttribute('data-bs-dismiss', 'modal');
-    add.click();
+masterPlay.addEventListener('click', () => {
+    if (audioElement.paused || audioElement.currentTime <= 0) {
+        audioElement.play();
+        masterPlay.classList.remove('fa-play-circle');
+        masterPlay.classList.add('fa-pause-circle');
+    }
+    else {
+        audioElement.pause();
+        masterPlay.classList.remove('fa-pause-circle');
+        masterPlay.classList.add('fa-play-circle');
+    }
+})
 
-    // IIFE: Immediately Invoked function Expression
-    (() => {
-      add.setAttribute('data-bs-dismiss', '');
-    })();
-  }
-};
 
-// Delete the task
+audioElement.addEventListener('timeupdate', () => {
+    console.log('timeupdate');
 
-let deleteTask = (e) => {
-  console.log(e.parentElement.parentElement);
+    progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
+  //  console.log(progress);
+    myProgressBar.value = progress;
+})
 
-  // removing the element from dom , and removing it from the UI
-  e.parentElement.parentElement.remove();
+myProgressBar.addEventListener('change', () => {
+    audioElement.currentTime = myProgressBar.value * audioElement.duration / 100;
+})
 
-  // deleting the element from the data array
-  data.splice(e.parentElement.parentElement.id, 1);
+const makeAllPlays = () => {
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
+        element.classList.remove('fa-pause-circle');
+        element.classList.add('fa-play-circle');
 
-  localStorage.setItem('tasks', JSON.stringify(data));
-  console.log('data array after deletion', data);
-};
 
-// let fruits = ['banana', 'cherry', 'apple'];
-// // splice(start index, how many elements you want to delete, item1..... itemn)
-// fruits.splice(1, 2, 'mango');
-// console.log(fruits);
+    })
 
-// Editing a task
-let editTask = (e) => {
-  let selectedTask = e.parentElement.parentElement;
-  console.log(selectedTask.children[1]);
+}
 
-  textInput.value = selectedTask.children[0].innerHTML;
-  dateInput.value = selectedTask.children[1].innerHTML;
-  textarea.value = selectedTask.children[2].innerHTML;
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
+    element.addEventListener('click', (e) => {
+        makeAllPlays()
+        e.target.classList.remove('fa-play-circle');
+        e.target.classList.add('fa-pause-circle');
 
-  // delete the previous element which you were editing
-  deleteTask(e);
-};
+    })
+})
 
-(() => {
-  data = JSON.parse(localStorage.getItem('tasks')) || [];
-  showTasks();
-})();
