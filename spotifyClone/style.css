@@ -1,0 +1,121 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+#nav .container{
+    display:flex;
+    flex-direction:column;
+}
+body{
+
+   background-image: url("https://images.pexels.com/photos/3721941/pexels-photo-3721941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+background-repeat: no-repeat;
+background-size: cover;
+/* border:2px solid red; */
+/* background-position: center; */
+position:relative;
+}
+ .nav{
+    display:flex;
+    justify-content:space-between;
+   align-items: center;
+   width:88%;
+   margin:auto;
+   margin: 15px 0;
+   color: #ccc;
+  
+}
+
+.nav ul li{
+    list-style: none;
+    display:inline-block;
+    margin:0 15px;
+  
+}
+.nav ul li a{
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #ccc;
+  text-decoration: none;
+}
+#header .music1 h1{
+    font-weight:500;
+    font-size:90px;
+    color:#ccc;
+line-height:110px;
+
+}
+#header .music2 h4{
+color:#ccc;
+margin-top:150px;
+}
+#header .music3 h3{
+color:#ccc;
+font-family:sans-serif;
+margin-top:50px;
+
+
+}
+
+/* .container{
+    background-color: white;
+    width:300px;
+border-radius: 25px;
+margin-top: 60px;
+margin-left:150px;
+} */
+.songItemContainer{
+    margin-top:30px;
+}
+.bottom{
+    margin-left:100px;
+    margin-top: 30px;
+   
+}
+#myProgressBar{
+    width:1100px;
+   cursor: pointer;
+}
+.icons{
+    margin-left: 500px;
+}
+.icons i{
+   cursor: pointer;
+   color: white;
+}
+.songItem{
+    height:50px;
+    display: flex;
+    background-color: white;
+    color: black;
+    margin: 10px 0;
+width: 400px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+}
+.songItem img{
+    border-radius: 34px;
+}
+@media (max-width:799px){
+    #navbar{
+       position:sticky;
+       top: 100%;
+       right: 0;
+       width: 280px;
+       height: 80vh;
+       right:-300px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+      align-items: flex-start;
+       background-color: gainsboro;
+       box-shadow:0 40px 60px;
+       justify-content: flex-start;
+       transition:all .45s ease;
+
+   } 
+}
+
+ 
