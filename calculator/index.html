@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <style>
+        body {
+            text-align: center;
+            background-color: lightcyan;
+        }
+
+        button {
+            height: 50px;
+            width: 50px;
+            margin-top:5px;
+            background-color: rgb(204, 228, 220);
+        }
+input{
+    height:40px;
+    width:210px;
+    border: 2px solid black;
+border-radius: 5px;
+
+}
+       
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+</head>
+
+<body>
+    <h1>Please Calculate!</h1>
+    <div id="calcu" class="container flex flex-col items-center mx-auto m-w-20">
+        <div class="row">
+            <input class="input" name="result" type="text" id="result">
+        </div>
+        <div class="row">
+         <button>7</button>
+         <button>8</button>
+         <button>9</button>
+         <button>C</button>
+        </div>
+        <div class="row">
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>*</button>
+        </div>
+        <div class="row">
+            <button>3</button>
+            <button>2</button>
+            <button>1</button>
+            <button>-</button>
+        </div>
+        <div class="row">
+            <button>0</button>
+            <button>.</button>
+            <button>=</button>
+            <button>+</button>
+        </div>
+
+
+
+        <script>
+
+
+let result = document.getElementById('result');
+buttons = document.querySelectorAll('button');
+//let value = document.getElementById('value');
+let resultValue = '';
+for(item of buttons){
+    item.addEventListener('click', (e)=>{
+        buttonText = e.target.innerText;
+        console.log(buttonText);
+
+        if(buttonText == '*'){
+            buttonText = '*';
+            resultValue += buttonText;
+            result.value = resultValue;
+
+        }else if(buttonText =='C'){
+            resultValue = "";
+            result.value = resultValue;
+
+        }else if(buttonText == '='){
+            result.value = eval(resultValue);
+        }
+        else{
+            resultValue += buttonText;
+            result.value = resultValue;
+        }
+    })
+}
+
+            // function dis(val) {
+            //     document.getElementById("result").value += val
+            // }
+            // function myFunction(event) {
+            //     if (event.key == '0' || event.key == '1' ||
+            //         event.key == '2' || event.key == '3' ||
+            //         event.key == '4' || event.key == '5' ||
+            //         event.key == '6' || event.key == '7' ||
+            //         event.key == '8' || event.key == '9' ||
+            //         event.key == '+' || event.key == '-' ||
+            //         event.key == '*' || event.key == '.')
+
+            //         document.getElementById("result").value += event.key;
+            // }
+            // var cal = document.getElementById("calcu");
+            // cal.onkeyup = function (event) {
+            //     if (event.keyCode === 13) {
+            //         console.log("Enter");
+            //         let x = document.getElementById("result").value
+            //         console.log(x);
+            //         solve();
+            //     }
+            // }
+            // function solve() {
+            //     let x = document.getElementById("result").value 
+            //     let y = evaluate('y')
+            //     document.getElementById("result").value = y
+            //     // console.log(y);
+            // }
+            // function clr() {
+            //     document.getElementById("result").value = " "
+            // } 
+
+
+        </script>
+
+</body>
+
+</html>
