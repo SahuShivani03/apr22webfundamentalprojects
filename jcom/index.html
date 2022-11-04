@@ -1,1 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <!--bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--fontawsome-->
+    <script src="https://kit.fontawesome.com/fb55250380.js" crossorigin="anonymous"></script>
+
+    <!--style-->
+    <link rel="stylesheet" href="style.css">
+    <!--script-->
+    <script src="script.js"></script>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jcom</title>
+</head>
+
+<body>
+    <!-- navbar-->
+    <nav id="header">
+
+
+
+        <h2>J-Com</h2>
+
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="#"> Home</a> </li>
+                <li><a href="#"> Shop</a> </li>
+                <li><a href="#"> Products</a> </li>
+                <li><a href="#"> New</a> </li>
+                <li><a href="#"> Contact</a> </li>
+                <li id="lg-bag"> <a href="#"> <i id="selectedItem" class="fa-solid fa-briefcase">  
+                   
+                </i> </a>
+                <ul id="list"></ul>
+                </li>
+                
+                <!-- <a href="#" id="close"><i class="far fa-times"></i> </a> -->
+            </ul>
+
+        </div>
+
+        <div id="mobile">
+            <a href="cart.html"> <i class="fa-solid fa-briefcase"></i></a>
+            <a href="javascript:void(0);" class="icon" onclick="jcom()"> <i onclick="myFunction(this)" id="bar"
+                    class=" fas fa-outdent"></i></a>
+        </div>
+
+    </nav>
+
+
+ <!--------------------------------carousel------------------------->
+ <section id="home" class="home pt-5 overflow-hidden">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner ">
+        <div class="carousel-item active ">     
+          <div class="home-banner home-banner-1" >
+   <div class="home-banner-text">
+    <h1>Women</h1>
+    <p>52% Discount For This Season</p>
+    <a href="#"   class="btn btn-danger textuppercase mt-4 "> OUR PRODUCTS</a>
+   </div>
+          </div>   
+        </div>
+        <div class="carousel-item">
+          <div class="home-banner home-banner-2" >
+            <div class="home-banner-text">
+             <h1>J-com</h1>
+             <p>with working card & paypal</p>
+             <a href="#"   class="btn btn-danger textuppercase mt-4 "> OUR PRODUCTS</a>
+            </div>
+        </div>
+       
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true">
+          <span class="ti-angle-leftslider-icon"></span>
+        </span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="ti-angle-leftslider-icon"></span>
+  
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!--main-->
+    <main id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mt-5">
+                    <h1> Women New <br><span> Arrivals</span> </h1>
+                    <p>New Products, now available in best prices</p>
+                    <button class="p-2"> View Collection</button>
+                </div>
+                <div class="col-md-7">
+                    <img src="https://st3.depositphotos.com/4148091/18717/i/1600/depositphotos_187174184-stock-photo-young-beautiful-tender-girl-bride.jpg"
+                        height="600" width="600">
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--featured-->
+    <h1 class="text-center mt-5">Featured Categories</h1>
+
+    <section id="grid-featured">
+
+
+        <div class="item">
+            <img src="https://thumbs.dreamstime.com/b/cosmetic-products-collage-set-collection-cosmetic-beauty-products-isolated-white-background-woman-accessories-142442317.jpg"
+                height="200" width="200">
+
+        </div>
+        <div class="item"> <img
+                src="https://image.shutterstock.com/image-vector/face-wash-template-blank-cosmetic-260nw-692461840.jpg"
+                height="200" width="200">
+        </div>
+        <div class="item"> <img
+                src="https://p.kindpng.com/picc/s/433-4334246_love-teddy-bear-png-free-download-teddy-bear.png"
+                height="200" width="200">
+        </div>
+        <div class="item"> <img
+                src="https://previews.123rf.com/images/ksena32/ksena321812/ksena32181200539/114050079-soap-with-foam-isolated-on-white-background.jpg"
+                height="200" width="200">
+        </div>
+        <div class="item"> <img src="https://i.pinimg.com/564x/48/f5/3c/48f53cff9b605f21b4bb38c9617344f0.jpg"
+                height="200" width="200">
+        </div>
+
+
+    </section>
+    <!--offer-->
+
+    <section id="offer">
+        <h3 class="text-center">Summer On Sale</h3>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ">
+                    <h3>20% OFF <br> NEW ARRIVAL</h3>
+                    <button class="p-2">Shop Now</button>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://icon2.cleanpng.com/20180328/wtq/kisspng-woman-beauty-parlour-facial-massage-hairstyle-beauty-5abbcf36734d19.5018253415222577184723.jpg"
+                        height="400" width="300" alt="error">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--arrival-->
+    <section id="arrival">
+        <div class="container">
+            <h2 class="text-center">New Arrivals</h2>
+            <div class="arrival-grid">
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMd6YgIAiAXITT9olEcJywIuZwZ5PJBY2WMQ&usqp=CAU"
+                        height="200" width="200" alt="error">
+                    <p>Lorem, ipsum dolor.</p>
+                    <p><b> $ 4.5</b><a href="https://www.paypal.com/in/home"
+                         style="text-decoration:none" target="_blank"> <i
+                                class="fa-solid fa-indian-rupee-sign"></i></a> </p>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <button   onclick="addToCart()" id="selectedItem"> <a href="#"> <i class="fa-solid fa-cart-shopping"></i> </a>Add to cart  </button>
+
+                </div>
+                
+                <div class="item">
+                    <img src="https://previews.123rf.com/images/kamonsaejueng/kamonsaejueng1802/kamonsaejueng180200011/94809283-white-cosmetic-products-and-green-leaves-on-white-background-natural-beauty-products-for-branding-mo.jpg"
+                        height="200" width="200" alt="error">
+                    <p>Lorem, ipsum dolor.</p>
+                    <p><b> $ 3.9</b><a href="https://www.paypal.com/in/home"
+                        style="text-decoration:none" target="_blank"> <i
+                                class="fa-solid fa-indian-rupee-sign"></i></a> </p>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <button   onclick="addToCart()" id="selectedItem"> <a href="#"> <i class="fa-solid fa-cart-shopping"></i> </a>Add to cart  </button>
+
+
+                </div>
+                <div class="item">
+                    <img src="https://c8.alamy.com/comp/J44ARC/products-of-care-of-skin-hair-decorative-cosmetics-on-white-background-J44ARC.jpg"
+                        height="200" width="200" alt="error">
+                    <p>Lorem, ipsum dolor.</p>
+                    <p><b> $ 5.5</b><a href="https://www.paypal.com/in/home"
+                         style="text-decoration:none" target="_blank"> <i
+                                class="fa-solid fa-indian-rupee-sign"></i></a> </p>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <button   onclick="addToCart()" id="selectedItem"> <a href="#"> <i class="fa-solid fa-cart-shopping"></i> </a>Add to cart  </button>
+
+
+                </div>
+                <div class="item">
+                    <img src="https://img.freepik.com/premium-photo/cute-little-girl-white-t-shirt-blamk-your-design-isolated-white-background_143092-1564.jpg?w=740"
+                        height="200" width="200" alt="error">
+                    <p>Lorem, ipsum dolor.</p>
+                    <p><b> $ 3.5</b><a href="https://www.paypal.com/in/home"
+                         style="text-decoration:none" target="_blank"> <i
+                                class="fa-solid fa-indian-rupee-sign"></i></a> </p>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <button   onclick="addToCart()" id="selectedItem"> <a href="#"> <i class="fa-solid fa-cart-shopping"></i> </a>Add to cart  </button>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- brands-->
+    <section>
+        <div class="container">
+            <div class="brand-grid">
+                <div class="brand-item"> Lakme </div>
+                <div class="brand-item"> Urban Company</div>
+                <div class="brand-item"> JV </div>
+                <div class="brand-item"> Elle </div>
+                <div class="brand-item"> Ziva </div>
+                <div class="brand-item"> Lakme Fashion </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4> Sign Up for newsletter</h4>
+                    <p> Get E-mail updatesabout our latest shop and <span> Special Offer</span></p>
+                </div>
+                <div class=" col-md-6">
+                    <form class="form-group">
+                        <div> <input class="input1" type="email" placeholder="Enter mail"></div>
+                        <div> <button class="btn btn-success" placeholder="Sign Up"> Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--footer-->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-item">
+                    <h3>Classix</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <a href="https://m.facebook.com/login/save-device/?login_source=login">
+                        <i class="fa-brands fa-facebook"></i> </a>
+                    <a href="https://www.instagram.com/accounts/login/"> <i
+                            class="fa-brands fa-square-instagram"></i></a>
+                    <a href=" https://www.whatsapp.com/"> <i class="fa-brands fa-whatsapp "></i></a>
+                </div>
+                <div class="footer-item">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>Featured</li>
+                        <li>New</li>
+                        <li>Contact</li>
+                    </ul>
+
+                </div>
+                <div class="footer-item">
+                    <h3>Our services</h3>
+                    <ul>
+                        <li>Pricing</li>
+                        <li>Free Shopping</li>
+                        <li>Gift Cards</li>
+                    </ul>
+
+                </div>
+                <div class="footer-item">
+                    <h3>Shopping</h3>
+                    <ul>
+                        <li>Parlour</li>
+                        <li>Best Makeup Artists</li>
+                        <li>Best Price</li>
+                        <li>Best Offers Provide</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center ">@ 2022 Tech etc HTML CSS Javascript E-commerce website</p>
+        </div>
+    </footer>
+</body>
+
+</html>
