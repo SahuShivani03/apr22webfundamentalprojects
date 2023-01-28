@@ -1,0 +1,118 @@
+   body {
+    /* font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;   
+     font-family: 'Tangerine', serif; */
+  
+    overflow: clip;
+   }
+ div {
+     border: 1px solid rgb(214, 214, 214);
+     height: 600px;
+     width: 80vh;
+     margin-left: 300px;
+ }
+
+ h1 {
+     margin: 50px;
+     text-align: center;
+     color: rgb(240, 15, 15);
+     font-family: 'Tangerine', serif;
+     font-size: 48px;
+     text-shadow: 4px 4px 4px #aaa;
+
+ }
+
+ a {
+     text-decoration: none;
+
+ }
+
+ form {
+     text-align: center;
+     margin: 30px;
+ }
+
+ form input {
+     width: 400px;
+     height: 40px;
+     margin: 3px;
+     padding: 10px;
+     text-align: center;
+     background-color: rgb(245, 242, 242);
+     border-radius: 5px;
+     border: 1px solid rgb(209, 208, 208);
+ }
+
+ a button {
+     width: 400px;
+     height: 40px;
+     margin: 3px;
+     padding: 10px;
+     text-align: center;
+     background-color: rgb(245, 242, 242);
+     border-radius: 5px;
+     border: 1px solid rgb(209, 208, 208);
+     margin-left: 12%;
+ }
+
+ .btn {
+     width: 400px;
+     height: 40px;
+     margin: 3px;
+     text-align: center;
+     border-radius: 5px;
+     border: 1px solid rgb(209, 208, 208);
+     margin-left: 12%;
+     
+ }
+
+ input {
+     width: 400px;
+     height: 30px;
+     margin-left: 60px;
+     padding: 10px;
+     text-align: center;
+     font-size: small;
+ }
+
+ p {
+     margin-top: 30px;
+     text-align: center;
+ }
+
+ p a {
+     text-decoration: none;
+ }
+
+ h2 {
+     margin-top: 40px;
+     ;
+     text-align: center;
+ }
+
+ button {
+     margin-top: 20px;
+     margin-left: 8%; 
+     height: 50px;
+     width: 100px;
+     padding: 10px;
+     text-align: center;
+ }
+
+ @media (min-width: 600px) and (max-width: 768) {
+  div{
+    border: 1px solid red;
+    height: 600px;
+    width: 2vh;
+    margin: 100%;
+    background-color: blue;
+    /* margin-left: 50px; */
+  }
+ 
+  .btn {
+  
+    margin-left: 100%;
+    
+}
+
+ }
